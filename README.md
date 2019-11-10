@@ -14,7 +14,7 @@ Use in a layout component.
 
 ```js
 import React from "react";
-import { createTopNav } from "../../src";
+import { createTopNav } from "react-top-nav";
 
 const { MenuIcon, Nav, MobileMenu, useMobileMenu } = createTopNav({
   mobileMenu: { backgroundColor: "#2fedf1" },

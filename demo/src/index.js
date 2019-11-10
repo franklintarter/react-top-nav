@@ -26,7 +26,6 @@ const Spacer = () => {
 
 const Demo = () => {
   const { isOpen, isScrolled, close, open, toggle } = useMobileMenu();
-  console.log(isOpen);
   return (
     <div style={{ paddingTop: "64px" }}>
       <Nav isScrolled={isScrolled} style={{ backgroundColor: "#ddd" }}>
