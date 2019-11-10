@@ -33,7 +33,18 @@ const Demo = () => {
         isOpen={isOpen}
         style={{ backgroundColor: "#ddd" }}
       >
-        <MenuIcon onClick={toggle} isOpen={isOpen} style={{ padding: "8px" }} />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <MenuIcon
+            onClick={toggle}
+            isOpen={isOpen}
+            style={{ paddingTop: "8px", paddingBottom: "8px" }}
+          />
+          <MenuIcon
+            onClick={toggle}
+            isOpen={isOpen}
+            style={{ paddingTop: "8px", paddingBottom: "8px" }}
+          />
+        </div>
         <MobileMenu isOpen={isOpen}>
           <ul>
             <li>Item</li>
