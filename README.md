@@ -1,16 +1,50 @@
 # react-top-nav
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+Top navigation component for React
 
-Describe react-top-nav here.
+## Install
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+```shell
+yarn add react-top-nav
+```
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+## Use
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+Use in a layout component.
+
+```js
+import React from "react";
+import { createTopNav } from "../../src";
+
+const { MenuIcon, Nav, MobileMenu, useMobileMenu } = createTopNav({
+  mobileMenu: { backgroundColor: "#2fedf1" },
+  menuIcon: { size: 48, barThickness: 2, barColor: "#0f0f0f" },
+  height: 64
+});
+
+
+export default ({ children }) => {
+  const { isOpen, isScrolled, close, open, toggle } = useMobileMenu();
+  return (
+    <div>
+    <div style={{ paddingTop: "64px" }}>
+      <Nav isScrolled={isScrolled} style={{ backgroundColor: "#ddd" }}>
+        <MenuIcon onClick={toggle} isOpen={isOpen} style={{ padding: "8px" }} />
+        <MobileMenu isOpen={isOpen}>
+          <ul>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li>
+          </ul>
+        </MobileMenu>
+      </Nav>
+      <main>{children}</main>
+    </div>
+  );
+};
+
+```
+
+### Contribute
+
+Suggestions, issues, PRs welcome!
