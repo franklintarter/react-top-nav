@@ -15,12 +15,14 @@ export const createMenuIcon = ({
   const leftOffset = scale * 2 + 1;
   const yOffset = leftOffset * 2;
 
-  const negativeMargin = scale * 5.18;
+  const negativeLeftMargin = scale * 5.25;
+  const negativeRightMargin = scale * 5.15;
+  // const negativeMargin = 0;
 
   const Container = styled.div`
     /* display: block; */
-    margin-left: -${negativeMargin}px;
-    margin-right: -${negativeMargin}px;
+    margin-left: -${negativeLeftMargin}px;
+    margin-right: -${negativeRightMargin}px;
     height: ${size}px;
     width: ${size}px;
     position: relative;

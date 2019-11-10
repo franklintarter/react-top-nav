@@ -8,6 +8,7 @@ export const createNav = ({ height = 48 }) => {
       isScrolled && !isOpen ? `translateY(-${height}px)` : `translateY(0)`};
     z-index: 100;
     width: 100%;
+    box-sizing: border-box;
     top: 0;
     transition: height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1), transform 400ms;
     height: ${({ isOpen }) => (isOpen ? "100%" : `${height}px`)};

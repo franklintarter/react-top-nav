@@ -3,16 +3,17 @@ import React from "react";
 import { render } from "react-dom";
 
 import { createTopNav } from "../../src";
+import "./styles.css";
 
 const { MenuIcon, Nav, MobileMenu, useMobileMenu } = createTopNav({
   mobileMenu: { backgroundColor: "#2fedf1" },
-  menuIcon: { size: 48, barThickness: 2, barColor: "#0f0f0f" },
+  menuIcon: { size: 64, barThickness: 2, barColor: "#0f0f0f" },
   height: 64
 });
 
 const Spacer = () => {
   return (
-    <p style={{ fontSize: "24px", padding: "2rem" }}>
+    <p style={{ fontSize: "24px" }}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -27,39 +28,58 @@ const Spacer = () => {
 const Demo = () => {
   const { isOpen, isScrolled, close, open, toggle } = useMobileMenu();
   return (
-    <div style={{ paddingTop: "64px" }}>
+    <div
+      style={{
+        paddingTop: "64px"
+      }}
+    >
       <Nav
         isScrolled={isScrolled}
         isOpen={isOpen}
-        style={{ backgroundColor: "#ddd" }}
+        style={{
+          paddingLeft: "16px",
+          paddingRight: "16px",
+          backgroundColor: "#ddd"
+        }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <MenuIcon
-            onClick={toggle}
-            isOpen={isOpen}
-            style={{ paddingTop: "8px", paddingBottom: "8px" }}
-          />
-          <MenuIcon
-            onClick={toggle}
-            isOpen={isOpen}
-            style={{ paddingTop: "8px", paddingBottom: "8px" }}
-          />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between"
+          }}
+        >
+          <MenuIcon onClick={toggle} isOpen={isOpen} />
+          <MenuIcon onClick={toggle} isOpen={isOpen} />
         </div>
         <MobileMenu isOpen={isOpen}>
           <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
+            <li>
+              <button type="button" onClick={close}>
+                Item
+              </button>
+            </li>
+            <li>
+              <button type="button" onClick={close}>
+                Item
+              </button>
+            </li>
+            <li>
+              <button type="button" onClick={close}>
+                Item
+              </button>
+            </li>
           </ul>
         </MobileMenu>
       </Nav>
-      <h1>react-top-nav Demo</h1>
-      <Spacer />
-      <Spacer />
-      <Spacer />
-      <Spacer />
-      <Spacer />
-      <Spacer />
+      <main style={{ padding: "16px" }}>
+        <h1>Demo</h1>
+        <Spacer />
+        <Spacer />
+        <Spacer />
+        <Spacer />
+        <Spacer />
+        <Spacer />
+      </main>
     </div>
   );
 };
