@@ -9,7 +9,6 @@ export const createNav = ({ height = 48 }) => {
     z-index: 100;
     width: 100%;
     top: 0;
-    /* background-color: #ddd; */
     transition: height 0.56s cubic-bezier(0.52, 0.16, 0.24, 1), transform 400ms;
     height: ${({ isOpen }) => (isOpen ? "100%" : `${height}px`)};
   `;
@@ -29,9 +28,8 @@ export const createNav = ({ height = 48 }) => {
 };
 
 const Nav = ({ NavWrapper, children, isScrolled, isOpen, ...rest }) => {
-  console.log(rest);
   return (
-    <NavWrapper open={isOpen} isScrolled={isScrolled} {...rest}>
+    <NavWrapper isOpen={isOpen} isScrolled={isScrolled} {...rest}>
       {children}
     </NavWrapper>
   );

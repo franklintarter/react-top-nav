@@ -28,7 +28,11 @@ const Demo = () => {
   const { isOpen, isScrolled, close, open, toggle } = useMobileMenu();
   return (
     <div style={{ paddingTop: "64px" }}>
-      <Nav isScrolled={isScrolled} style={{ backgroundColor: "#ddd" }}>
+      <Nav
+        isScrolled={isScrolled}
+        isOpen={isOpen}
+        style={{ backgroundColor: "#ddd" }}
+      >
         <MenuIcon onClick={toggle} isOpen={isOpen} style={{ padding: "8px" }} />
         <MobileMenu isOpen={isOpen}>
           <ul>
