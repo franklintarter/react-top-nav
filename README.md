@@ -22,11 +22,9 @@ const { MenuIcon, Nav, MobileMenu, useMobileMenu } = createTopNav({
   height: 64
 });
 
-
 export default ({ children }) => {
   const { isOpen, isScrolled, close, open, toggle } = useMobileMenu();
   return (
-    <div>
     <div style={{ paddingTop: "64px" }}>
       <Nav isScrolled={isScrolled} style={{ backgroundColor: "#ddd" }}>
         <MenuIcon onClick={toggle} isOpen={isOpen} style={{ padding: "8px" }} />
@@ -42,7 +40,6 @@ export default ({ children }) => {
     </div>
   );
 };
-
 ```
 
 ### Contribute
